@@ -1,73 +1,95 @@
 import { Pagination } from "@mui/material";
 import { useState } from "react";
-import Pagination1 from '../Assets/pagination1.png'
-import Save from '../Assets/save.png'
+import Pagination1 from "../Assets/pagination1.png";
+import Save from "../Assets/save.png";
 import { NavLink } from "react-router-dom";
 // import Pagination1 from '../Assets/laxmi.jpg'
 
-function PaginationCard(){
-    const[page,setPage] = useState(1)
-    function scrollToUpward(){
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+function PaginationCard() {
+  const [page, setPage] = useState(1);
+  function scrollToUpward() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
-    return(
-        <>
-
-        <div className="container my-4">
-            <div className="row d-flex justify-content-center">
-            <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard " >
-            <img src={Pagination1} class="card-img-top" alt="..."/>
+  return (
+    <>
+      <div className="container my-4">
+        <div className="row d-flex justify-content-center">
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+            <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
-                <span>Total children taught</span>
-                <span className="count">12</span>
+              <span>Total children taught</span>
+              <span className="count">12</span>
             </div>
             <div class="card-body">
-
-                <h5 class="card-title">Laxmi Prasad</h5>
-                <p class="card-text">Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.</p>
-                <div className="childrenss d-flex justify-content-between">
-                 <img src={Save} alt="" />
-                <NavLink to={'/donate'} style={{textDecoration:'none'}} onClick={scrollToUpward}><a  class="btn btn-primary purple">Donate now</a></NavLink>
-                </div>
+              <h5 class="card-title">Laxmi Prasad</h5>
+              <p class="card-text">
+                Innovative educator fostering creativity and critical thinking
+                in Indian classrooms. She teaches Art.
+              </p>
+              <div className="childrenss d-flex justify-content-between">
+                <img src={Save} alt="" />
+                <NavLink
+                  to={"/donate"}
+                  style={{ textDecoration: "none" }}
+                  onClick={scrollToUpward}
+                >
+                  <a class="btn btn-primary purple">Donate now</a>
+                </NavLink>
+              </div>
             </div>
-            </div>
-            <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard " >
-            <img src={Pagination1} class="card-img-top" alt="..."/>
+          </div>
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+            <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
-                <span>Total children taught</span>
-                <span className="count">12</span>
+              <span>Total children taught</span>
+              <span className="count">12</span>
             </div>
             <div class="card-body">
-
-                <h5 class="card-title">Laxmi Prasad</h5>
-                <p class="card-text">Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.</p>
-                <div className="childrenss  d-flex justify-content-between">
-                 <img src={Save} alt="" />
-                 <NavLink to={'/donate'} style={{textDecoration:'none'}} onClick={scrollToUpward}><a  class="btn btn-primary purple">Donate now</a></NavLink>
-                </div>
+              <h5 class="card-title">Laxmi Prasad</h5>
+              <p class="card-text">
+                Innovative educator fostering creativity and critical thinking
+                in Indian classrooms. She teaches Art.
+              </p>
+              <div className="childrenss  d-flex justify-content-between">
+                <img src={Save} alt="" />
+                <NavLink
+                  to={"/donate"}
+                  style={{ textDecoration: "none" }}
+                  onClick={scrollToUpward}
+                >
+                  <a class="btn btn-primary purple">Donate now</a>
+                </NavLink>
+              </div>
             </div>
-            </div>
-            <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard " >
-            <img src={Pagination1} class="card-img-top" alt="..."/>
+          </div>
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+            <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
-                <span>Total children taught</span>
-                <span className="count">12</span>
+              <span>Total children taught</span>
+              <span className="count">12</span>
             </div>
             <div class="card-body">
-
-                <h5 class="card-title">Laxmi Prasad</h5>
-                <p class="card-text">Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.</p>
-                <div className="childrenss d-flex justify-content-between">
-                 <img src={Save} alt="" />
-                 <NavLink to={'/donate'} style={{textDecoration:'none'}} onClick={scrollToUpward}><a  class="btn btn-primary purple">Donate now</a></NavLink>
-                </div>
+              <h5 class="card-title">Laxmi Prasad</h5>
+              <p class="card-text">
+                Innovative educator fostering creativity and critical thinking
+                in Indian classrooms. She teaches Art.
+              </p>
+              <div className="childrenss d-flex justify-content-between">
+                <img src={Save} alt="" />
+                <NavLink
+                  to={"/donate"}
+                  style={{ textDecoration: "none" }}
+                  onClick={scrollToUpward}
+                >
+                  <a class="btn btn-primary purple">Donate now</a>
+                </NavLink>
+              </div>
             </div>
-            </div>
-           
-            </div>
+          </div>
         </div>
-        <div className="d-inline-flex justify-content-between mb-5 p-3 w-100">
-              {/* <div className="d-inline-flex  pt-2">
+      </div>
+      <div className="d-inline-flex justify-content-between mb-5 p-3 w-100">
+        {/* <div className="d-inline-flex  pt-2">
                 <p className="mt-1">
                   <b>Go to page :</b>{" "}
                 </p>
@@ -80,7 +102,7 @@ function PaginationCard(){
                   <b>of 10</b>
                 </p>
               </div> */}
-              <div className="">
+        {/* <div className="">
                 <Pagination
                   style={{ alignSelf: "center" }}
                   count={10}
@@ -93,10 +115,10 @@ function PaginationCard(){
                   defaultValue={1}
                   page={page}
                 />
-              </div>
-            </div>
-        </>
-    )
+              </div> */}
+      </div>
+    </>
+  );
 }
 
-export default PaginationCard
+export default PaginationCard;
