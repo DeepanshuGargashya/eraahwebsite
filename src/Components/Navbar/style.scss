@@ -59,7 +59,7 @@ div.navbar-area{
     z-index: 999;
     background: transparent;
     box-shadow: 0px 4px 24.899999618530273px 0px rgba(0, 0, 0, 0.25);
-    height: 15dvh;
+    // height: 15dvh;
     top:0
 }
 @media screen and (max-width:930px) {
@@ -98,11 +98,14 @@ div.navItems{
 
 div.navItems>li{
     list-style: none;
-    margin-right: 25px;
+    margin-right: 70px;
+    // margin-right: 25px;
     color: rgba(0, 0, 0, 1);
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Gotham';
+    a{
+        font-family: 'Gotham' !important;
+    }
 
 }  
 .navItems .links.active{
@@ -168,6 +171,7 @@ div.navbar-area div.nav-toggler-icon{
     border-radius: 5px;
     font-family: 'Gotham';
     margin-right: 20px;
+    box-shadow: 0px 1px 16.6px 0px #FFC30D;
 }
 div.navbar-area.scrolled div.nav-toggler-icon{
     color: black;
@@ -213,7 +217,7 @@ ul.sidebar-item-child li a{
     text-decoration: none;
     font-size: 25px;
     color: white;
-    display: block;
+    display: inline-block;
     transition: 0.3s;
 }
 .custom-sidebar a:hover {
@@ -747,6 +751,10 @@ text-align: left;
     // height: 98dvh;
     position: relative;
   }
+  .banner .filterimage{
+    transition: filter .3s ease-in;
+    filter:brightness(0.5);
+  }
 .banner-content {
     position: absolute;
     top: 33%;
@@ -923,9 +931,14 @@ text-align: left;
     align-items: center;
         justify-content: center;
         display: flex;
-}
-.search-tags .all:hover{
-    cursor: pointer;
+        .all{
+            span{
+                padding:6px 15px;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
 }
 .paginationCard {
     padding: 0px !important;
@@ -953,7 +966,7 @@ text-align: left;
     }
     .childrenss{
         img{
-            width: 10% !important
+            width: 13% !important
         }
         .purple{
             background-color: #6100FF;

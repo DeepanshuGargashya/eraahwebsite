@@ -80,8 +80,8 @@ function Footer() {
             <div className="single-footer-widget">
               <ul className="list">
                 <li className="mb-2">CONTACT US</li>
-                <li>02 9281 9829</li>
-                <li>shrey.bansal@errah.org</li>
+                <li><a href="tel:0292819829" style={{fontSize:'14.5px'}}>+91 0292819829</a></li>
+                <li><a href="mailto:shrey.bansal@eraah.org" style={{fontSize:'14.5px'}}>shrey.bansal@eraah.org</a></li>
               </ul>
             </div>
           </div>

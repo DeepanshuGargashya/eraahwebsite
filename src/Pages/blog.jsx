@@ -24,9 +24,9 @@ function Blog() {
           </h2>
           {/* <i class="fa fa-camera fa-stack-1x"></i> */}
           <input
-            class="form-control me-2 my-3  "
+            class="form-control me-2 my-3 px-4"
             type="search"
-            placeholder="     Find donations..."
+            placeholder="Find donations..."
             aria-label="Search"
           />
         </div>
@@ -45,9 +45,8 @@ function Blog() {
               className="text-center"
               style={
                 color === "All"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -68,9 +67,8 @@ function Blog() {
             <span
               style={
                 color === "Disaster"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? { color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -91,9 +89,8 @@ function Blog() {
             <span
               style={
                 color === "Children"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? { color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -122,9 +119,8 @@ function Blog() {
             <span
               style={
                 color === "FoodCrisis"
-                  ? { backgroundColor: "transparent", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -148,9 +144,8 @@ function Blog() {
             <span
               style={
                 color === "Health"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -174,9 +169,9 @@ function Blog() {
             <span
               style={
                 color === "Education"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
+                     
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -200,9 +195,8 @@ function Blog() {
             <span
               style={
                 color === "Homeless"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -226,9 +220,8 @@ function Blog() {
             <span
               style={
                 color === "Animal"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -252,9 +245,8 @@ function Blog() {
             <span
               style={
                 color === "Pandemic"
-                  ? { backgroundColor: "rgba(255, 195, 13, 1)", color: "white" }
+                  ? {  color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }
@@ -283,9 +275,8 @@ function Blog() {
             <span
               style={
                 color === "WarCrisis"
-                  ? { backgroundColor: "transparent", color: "white" }
+                  ? { color: "white" }
                   : {
-                      backgroundColor: "rgba(244, 244, 244, 1)",
                       color: "rgba(97, 97, 97, 1)",
                     }
               }

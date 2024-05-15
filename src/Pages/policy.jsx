@@ -303,6 +303,13 @@ function Policy(){
             <h3>13. Effective Date</h3>
             <p>This policy was updated and became immediately effective on February 29th, 2024.
             </p>
+            <h3>14. Cancellation Policy</h3>
+            <p>You may cancel your subscription or service at any time. There are no restrictions on when you can cancel, providing you with the flexibility to manage your commitments according to your needs.
+            </p>
+            <h3>15. Refund Policy</h3>
+            <p>If you are not satisfied with our service, you are eligible for a refund within 15 days of your purchase. To initiate a refund, please contact our customer support team with your purchase details. Please note that the refund process may take up to 90 days to be completed after approval.
+            </p>
+            <p>We strive to ensure our customers are completely satisfied with our services. If you have any questions or need assistance, please don't hesitate to reach out to us.</p>
 
         </div>
         

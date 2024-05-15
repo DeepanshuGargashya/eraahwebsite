@@ -12,9 +12,9 @@ function PaginationCard() {
   }
   return (
     <>
-      <div className="container my-4">
+      <div className="container blogcards my-4">
         <div className="row d-flex justify-content-center">
-          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4 card-width  paginationCard ">
             <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
               <span>Total children taught</span>
@@ -38,7 +38,7 @@ function PaginationCard() {
               </div>
             </div>
           </div>
-          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4 card-width  paginationCard ">
             <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
               <span>Total children taught</span>
@@ -62,7 +62,7 @@ function PaginationCard() {
               </div>
             </div>
           </div>
-          <div class="card col-lg-3 col-sm-6 mx-4 mt-4  paginationCard ">
+          <div class="card col-lg-3 col-sm-6 mx-4 mt-4 card-width paginationCard ">
             <img src={Pagination1} class="card-img-top" alt="..." />
             <div className="childrens">
               <span>Total children taught</span>
@@ -86,6 +86,7 @@ function PaginationCard() {
               </div>
             </div>
           </div>
+          {/* <Blogcard img={Pagination1} /> */}
         </div>
       </div>
       <div className="d-inline-flex justify-content-between mb-5 p-3 w-100">
@@ -122,3 +123,17 @@ function PaginationCard() {
 }
 
 export default PaginationCard;
+
+function Blogcard({ img }) {
+  return (
+    <>
+      <div class="col-lg-3 col-sm-6 mx-4 mt-4 card-width">
+          <img src={img} alt="" />
+          <div className="Totalchildrentaught">
+            <h5>Total children taught</h5>
+            <h5 className="count">12</h5>
+          </div>
+      </div>
+    </>
+  )
+}

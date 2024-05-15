@@ -1,0 +1,20 @@
+.blogcards{
+    .card-width{
+        width: 35% !important;
+        padding: 0px;
+        img{
+            width: 100%;
+        }
+        .Totalchildrentaught{
+            padding: 16px 16px 0px 16px;
+            display: flex;
+            justify-content: space-between;
+            h5{
+                color:#999ca9;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: 'Gotham' !important;
+            }
+        }
+    }
+}

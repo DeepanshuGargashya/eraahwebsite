@@ -54,9 +54,8 @@ function CustomNavbar(){
     return (
         <div className="navbar-area mb-5">
         <div className="container-fluid d-flex flex-row justify-content-between align-items-center">
-
             <div className="navbar-brand" >
-                   <NavLink to={'/'}> <img className='navbar-brand-img' src={EraahLogo} alt="" /></NavLink>
+                   <NavLink to={'/'}> <img className='navbar-brand-img' src={EraahLogo} alt="" width={"80%"}/></NavLink>
 
                 </div>
             <div className="navItems">
@@ -66,7 +65,7 @@ function CustomNavbar(){
 
                 <li><NavLink className={`links ${location.pathname=== '/blog'? 'active' : ''}`} to={'/blog'} onClick={()=> scrollToUpward('Blog')}>Blog</NavLink></li>
             
-               <li> <NavLink className={`links ${location.pathname=== '/donate'? 'active' : ''}`} to={'/donate'} onClick={()=> scrollToUpward('Donate')}> <button type="button" class="btn">Donate</button></NavLink></li>
+               <li> <NavLink className={`links ${location.pathname=== '/donate'? 'active' : ''}`} to={'/donate'} onClick={()=> scrollToUpward('Donate')}> <button type="button" className="btn">Donate</button></NavLink></li>
 
                 <li><NavLink className={`links ${location.pathname=== '/logIn'? 'active' : ''}`} to={'/logIn'} onClick={scrollToUpward('')}>Log in</NavLink></li>
             </div> 
@@ -85,7 +84,8 @@ function CustomNavbar(){
                     {/* <li><NavLink to={""}>Expertise</NavLink></li>
                 <li><NavLink to={""}>Investment  Strategy</NavLink></li> */}
                     
-                <li><NavLink to={'/donate'} onClick={handleToggle}><button type="button" class="btn">Donate</button></NavLink></li>
+                <li><NavLink to={'/donate'} onClick={handleToggle}>Donate</NavLink></li>
+                {/* <li><NavLink to={'/donate'} onClick={handleToggle}><button type="button" class="btn">Donate</button></NavLink></li> */}
                 <li><NavLink to={'/logIn'} onClick={handleToggle}>Log In</NavLink></li>
                 </ul>
             </div>
