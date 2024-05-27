@@ -283,8 +283,9 @@ function Faq(){
 }
 
   
-
-  <a className="d-flex justify-content-center" onClick={handleReadMore}> {readMore? 'See less': 'See more'}</a>
+<div className="text-center mt-3">
+  <a className="" onClick={handleReadMore}> {readMore? 'See less': 'See more'}</a>
+</div>
 </div>
         </div>
         </>

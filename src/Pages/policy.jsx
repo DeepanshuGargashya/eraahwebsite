@@ -78,7 +78,7 @@ function Policy(){
                 <th scope="col-4">LEGAL BASIS FOR PROCESSING INCLUDING BASIS OF LEGITIMATE INTEREST</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="tbody">
             <tr>
                 <td >a. Personal</td>
                 <td>Registration as a new user</td>
@@ -178,6 +178,13 @@ function Policy(){
                  
                 </tr> */}
                 <tr>
+                <td>a. Personal</td>
+                <td>Administer and protect our business and this website (including troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data)</td>
+                <td>a. Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security, to prevent fraud and in the context of a business reorganization or group restructuring exercise)
+</td>
+                 
+                </tr>
+                <tr>
                 <td>b. Contact</td>
                 <td></td>
                 <td>b. Necessary to comply with a legal obligation</td>
@@ -191,12 +198,12 @@ function Policy(){
                 </tr>
                
               
-                {/* <tr>
+                <tr>
                 <td>a. Personal</td>
                 <td>Deliver relevant website content and advertisements to you and measure or understand the effectiveness of the advertising we serve to you</td>
                 <td>Necessary for our legitimate interests (to study how consumers use our products/services, to grow our business and to shape our marketing strategy)</td>
                  
-                </tr> */}
+                </tr>
                 <tr>
                 <td>b. Contact</td>
                 <td></td>
@@ -217,17 +224,23 @@ function Policy(){
 
 
                 <tr>
+                <td>e. Marketing and Communications</td>
+                <td></td>
+                <td></td>
+                 
+                </tr>
+                <tr>
                 <td>f. Technical</td>
                 <td></td>
                 <td></td>
                  
                 </tr>
-                {/* <tr>
+                <tr>
                 <td>a. Personal</td>
                 <td>Data analytics to improve our website, products/services, marketing, customer relationships and experiences</td>
                 <td>Necessary for our legitimate interests (to define types of consumers for our products and services, to keep our website updated and relevant, to develop our business and to shape our marketing strategy)</td>
                  
-                </tr> */}
+                </tr>
                 <tr>
                 <td>b. Technical</td>
                 <td></td>
@@ -238,12 +251,7 @@ function Policy(){
                 <td>c. usage</td>
                 <td></td>
                 <td></td>
-                 
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                </tr>
+                 </tr>
                
               
             </tbody>
@@ -264,7 +272,7 @@ function Policy(){
             <p>5.1 The Site allows a contributor to make an "anonymous" contribution to a campaign, even after registering through email or the Facebook login. By choosing to be anonymous, the Site does not publish the contributor's name or image on a campaign's contributor section and also does not provide the contributor's name to the campaigner, except for the phone number and billing/shipping addresses for the purpose of rewards delivery. Eraah knows about your identity when you register, but does not reveal it to anyone. </p>
             <h3>6. Review of Information / Account Deactivation / Removal of Information</h3>
             <p>6.1 If at any time a user wishes to review the information provided to us at the time of registering with us or at any time thereafter, you may do so by signing into your account and amending the same.</p>
-            <p>6.2 We provide all Users with the opportunity to opt-out of receiving non-essential (promotional, marketing-related) communications from us on behalf of our campaigner, and from us in general, after setting up an account. All Users are also given the option of cancelling their user accounts and bringing to our attention their desire to discontinue the use of our services. If you want to remove your contact information from this Site and our newsletters, please send us an email at info@eraah.org. Even if user opts-out, Eraah reserves the right to notify you about your existing account. </p>
+            <p>6.2 We provide all Users with the opportunity to opt-out of receiving non-essential (promotional, marketing-related) communications from us on behalf of our campaigner, and from us in general, after setting up an account. All Users are also given the option of cancelling their user accounts and bringing to our attention their desire to discontinue the use of our services. If you want to remove your contact information from this Site and our newsletters, please send us an email at <a href="mailto:info@eraah.org">info@eraah.org</a>. Even if user opts-out, Eraah reserves the right to notify you about your existing account. </p>
             <p>USERS IN EUROPE</p>
             <ul>
                 <li>Access. You have the right to request a copy of the information we are processing about you.</li>
@@ -297,7 +305,7 @@ function Policy(){
             <p>11.1 In accordance with Information Technology Act, 2000 and rules made there under, the name and contact details of the Grievance Officer who can be contacted with respect to any complaints, questions, comments or concerns including those pertaining to breach of Terms of Use, Privacy Policy and other policies or questions is provided below:</p>
             <p>Mr. Shrey Bansal</p>
             <p>Eraah Technologies Private Limited</p>
-            <p>Email: shrey.bansal@eraah.org</p>
+            <p>Email: <a href="mailto:shrey.bansal@eraah.org">shrey.bansal@eraah.org</a></p>
             <h3>12. Changes to this Policy</h3>
             <p>12.1 The Owner may update this Privacy Policy at any time and any changes will be effective upon posting. In the event that there are material changes to the way we treat your Personal Information, we will provide notice through the Site. We may also notify you by email, in our discretion. We will use your consent in a manner consistent with the Privacy Policy in effect at the time you submitted the information, unless you consent to the new or revised policy.</p>
             <h3>13. Effective Date</h3>

@@ -86,7 +86,7 @@ function PaginationLatest(){
            
             </div>
         </div>
-        <div className="d-inline-flex justify-content-between mb-5 p-3 w-100">
+        <div className="customPagination d-inline-flex justify-content-between mb-5 p-3 w-100">
               {/* <div className="d-inline-flex  pt-2">
                 <p className="mt-1">
                   <b>Go to page :</b>{" "}
