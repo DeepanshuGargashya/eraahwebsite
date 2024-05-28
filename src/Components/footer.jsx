@@ -83,7 +83,7 @@ const navigate = useNavigate();
                     Corporate Partner
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link
  to={"/policy"}
  onClick={() => scrollToUpward("Team")}
@@ -91,7 +91,16 @@ const navigate = useNavigate();
                   >
                     Privacy Policy
                   </Link>
-                </li> */}
+                </li>
+                <li>
+                  <Link
+ to={"/conditions"}
+ onClick={() => scrollToUpward("Team")}
+
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
                 {/* <li><Link to={"/conditions"} onClick={()=> scrollToUpward('Team')}>Privacy(T&C)</Link></li> */}
                 {/* <li><Link to={""}>Community</Link></li> */}
               </ul>
@@ -128,6 +137,7 @@ const navigate = useNavigate();
                     <img src={youtubeicon} alt="youtube logo" width={'90%'} style={{marginLeft:'1px',marginTop:'1px'}}/>
                   </a>
                 </div>
+                {/* <li><span>2024 © Eraah Pvt Limited</span></li> */}
 
               </ul>
             </div>
@@ -144,7 +154,7 @@ const navigate = useNavigate();
             </div>
           </div>
         </div>
-        <div className="horizontal-line text-white">
+        {/* <div className="horizontal-line text-white">
           <hr className="mt-0" />
         </div>
         <div className="copyright-area d-flex justify-content-between flex-wrap pb-3">
@@ -167,7 +177,7 @@ const navigate = useNavigate();
               <span className="mx-3 text-white">TERMS & CONDITIONS</span>
             </NavLink>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

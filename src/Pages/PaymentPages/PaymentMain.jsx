@@ -128,12 +128,12 @@ else{
             <div className="PaymentMain">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-xl-6 col-md-4 col-sm-12 ps-0 positioncol1">
+                        <div className="col-xl-6 col-md-4 col-sm-12 positioncol1">
                             <div className="imgss">
                                 <img src={paymentimg1} alt="payment-image" width={'80%'} />
                             </div>
                         </div>
-                        <div className="col-xl-6 col-md-8 col-sm-10 pe-0 leftcols positioncol2" id="formcol">
+                        <div className="col-xl-6 col-md-8 col-sm-10  leftcols positioncol2" id="formcol">
                             <div className="rightcol">
                                 <div className="heading text-end">
                                     <img src={eraahlogo} alt="eraahlogo" width={'20%'} />
@@ -278,7 +278,7 @@ else{
                                                 </div>
                                                 <div className="col-sm-4 col-xs-12 ps-0 rightcols">
                                                     <div className="amount" onClick={() => handlePayment()}>
-                                                        <h5>Pay ₹ 0.00</h5>
+                                                        <h5>Pay ₹ {Number(paymentData.monthlyAmount * paymentData.monthlyChildrenCount) + Number(paymentData.yearlyAmount * paymentData.yearlyChildrenCount)}</h5>
                                                     </div>
                                                 </div>
                                             </div>
