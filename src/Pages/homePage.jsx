@@ -12,7 +12,8 @@ import homepageimg4 from "../Assets/homepageimg4.png";
 import homepageimg5 from "../Assets/homepageimg5.png";
 import homepageimg6 from "../Assets/homepageimg6.png";
 import homepageimg7 from "../Assets/homepageimg7.png";
-
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import arrowRight from '../Assets/arrow-right.png';
 
 // function homePage() {
@@ -222,7 +223,8 @@ import arrowRight from '../Assets/arrow-right.png';
 //   );
 // }
 
-function homePage() {
+const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="homepage-New">
@@ -269,7 +271,7 @@ function homePage() {
                 <div className="texts">
                   <h4>Transparency & Efficiency </h4>
                   <p>We know that you care about how effectively your donation is being used. That's why we show you how every dollar was spent, how you made a difference, and how grateful the students and teachers are!</p>
-                  <button className="submit-btn">Donate Now  <img src={arrowRight} alt="ArrowIcon" width={'15%'} style={{ marginTop: '-4px' }} /></button>
+                  <button className="submit-btn" onClick={()=>navigate('/donate')}>Donate Now  <img src={arrowRight} alt="ArrowIcon" width={'15%'} style={{ marginTop: '-4px' }} /></button>
                 </div>
               </div>
               <div className="col-lg-5 col-sm-12 mt-3">
@@ -308,4 +310,4 @@ function homePage() {
   )
 }
 
-export default homePage;
+export default HomePage;

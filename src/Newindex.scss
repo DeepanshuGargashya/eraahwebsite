@@ -62,7 +62,19 @@ $fontfamily: 'Evolventa';
 
 .submit-btn {
     border-radius: 3px;
-    background-color: rgba(97, 0, 255, 1);
+    background-color: #6100ff;
+    font-family: $fontfamily;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 17.9px;
+    font-weight: 700;
+
+}
+
+.submit-btn2 {
+    border-radius: 5px;
+    background-color: #5628D2;
     font-family: $fontfamily;
     border: none;
     color: #fff;
@@ -1826,34 +1838,37 @@ $fontfamily: 'Evolventa';
 
         .teacher-about-section {
             .info-box {
-                .numberofStudents{
-                    .h5{
+                .numberofStudents {
+                    .h5 {
                         font-weight: 700 !important;
                         color: #FFC30D !important;
                         cursor: pointer;
                     }
                 }
             }
-            .contact-links{
-                .bottom-box{
-                    h4{
+
+            .contact-links {
+                .bottom-box {
+                    h4 {
                         font-family: $fontfamily;
                         margin-bottom: 20px;
-font-size: 25px;
-font-weight: 500;
-color: #454545;
+                        font-size: 25px;
+                        font-weight: 500;
+                        color: #454545;
                     }
-                    .boxbottom-caraousel{
-                        .cardbox{
-padding: 25px;
-.topsection{
-    .imgss-circle{
-        width: 111px;
-        height: 111px;
-            border-radius: 50%;
-            border: 1px solid #D4D4D4;
-    }
-}
+
+                    .boxbottom-caraousel {
+                        .cardbox {
+                            padding: 25px;
+
+                            .topsection {
+                                .imgss-circle {
+                                    width: 111px;
+                                    height: 111px;
+                                    border-radius: 50%;
+                                    border: 1px solid #D4D4D4;
+                                }
+                            }
                         }
                     }
                 }
@@ -1863,63 +1878,281 @@ padding: 25px;
 
 }
 
-.BlogPageView{
-    .banner{
-        img{
+.BlogPageView {
+    .banner {
+        img {
             filter: brightness(.7);
-            
+
         }
-        .heading-content{
+
+        .heading-content {
             text-align: center;
             margin-top: 60px;
-            h5{
+
+            h5 {
                 font-size: 40px;
                 font-weight: 600;
-                font-family:$fontfamily;
+                font-family: $fontfamily;
             }
         }
     }
-    .content{
+
+    .content {
         font-family: $fontfamily;
         margin-bottom: 30px;
-        h5{
+
+        h5 {
             font-size: 20px;
             font-weight: 500 !important;
         }
-        ol{
+
+        ol {
             margin-top: 30px;
             margin-bottom: 40px;
-            li{
+
+            li {
                 margin-top: 20px;
-                h6{
+
+                h6 {
                     font-weight: 700;
                 }
-                ul{
-                    li{
-                        h6{
-                            span{
+
+                ul {
+                    li {
+                        h6 {
+                            span {
                                 font-weight: 400 !important;
                             }
                         }
                     }
                 }
             }
-            &.underlined{
-                h6{
-                    .span-underline{
+
+            &.underlined {
+                h6 {
+                    .span-underline {
                         text-decoration: underline;
                     }
-                    span{
+
+                    span {
                         font-weight: 400;
                     }
                 }
             }
         }
-        .Hashlinks{
+
+        .Hashlinks {
             display: inline-flex;
             flex-wrap: wrap;
             margin-right: 15px;
             margin-top: 15px;
+        }
+    }
+}
+
+.PaymentMain {
+    .rightcol {
+        .formss {
+            box-shadow: 0px 4px 32px 10px #00000040;
+            background-color: #fff;
+
+            .error-msg {
+                font-weight: 600 !important;
+                font-family: $fontfamily;
+                font-size: 15px;
+                margin-top: 5px;
+            }
+        }
+
+        .form-box {
+            margin-top: 10%;
+            padding: 25px 20px 0px 20px;
+
+            h5 {
+                color: #000;
+                font-family: $fontfamily;
+                font-size: 32.73px;
+                font-weight: 700;
+
+            }
+
+            .box {
+                width: 85px;
+                height: 13px;
+                background-color: #5628D2;
+                margin-top: 20px;
+            }
+
+            .form-grp {
+                margin-top: 40px;
+
+                .label-tag {
+                    font-family: $fontfamily;
+                    font-size: 18px;
+                    font-weight: 400 !important;
+                    margin-top: 8px;
+                    color: #616161;
+                }
+
+                .input-tag {
+                    border: 1px solid #E7DADA;
+                    width: 100%;
+                    padding: 15px;
+
+                    &:disabled {
+                        cursor: not-allowed;
+                        background: white;
+                    }
+
+                    &.textarea {
+                        border-radius: 0px;
+                        border: 1px solid #E7DADA;
+                    }
+                }
+
+                h5 {
+                    font-family: $fontfamily;
+                    font-size: 15px;
+                    margin-top: 10px;
+                    font-weight: 400;
+                    color: #616161;
+                }
+
+                &.otp-grp {
+                    .input-tag {
+                        background-color: #F2F6F9;
+                        border-radius: 5px;
+                    }
+
+                    .resend {
+                        text-align: end;
+
+                        h6 {
+                            font-family: $fontfamily;
+                            margin-top: 8px;
+                            cursor: pointer;
+                            font-size: 15.34px;
+                            font-weight: 400 !important;
+                            color: #616161;
+                        }
+                    }
+                }
+
+                .span-input-grp {
+                    border: 1px solid #E7DADA;
+                    width: 100%;
+
+                    .span-text {
+                        background-color: white;
+                        border: none;
+                        padding: 15px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .inputtag {
+                        border: none;
+                        background-color: white;
+                        padding: 15px;
+                        font-weight: 600;
+                        font-size: 18px;
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+
+                    .NoofchildrenBtns {
+                        margin: 10px;
+                        margin-left: 10px !important;
+                        border: 2px solid #09A1F7;
+                        width: 35%;
+                        display: flex;
+
+                        .btnchildren {
+                            padding: 5px 10px;
+                            font-weight: 600 !important;
+                            font-family: $fontfamily;
+                            color: #09A1F7;
+                            border: none;
+                            background-color: #fff;
+                        }
+
+                        .inputchildren {
+                            text-align: center;
+                            width: 100%;
+                            padding: 5px;
+                            color: #09A1F7;
+                            font-weight: 600;
+                            font-size: 18px;
+                            border: none;
+                            border-left: 2px solid #09A1F7;
+                            border-right: 2px solid #09A1F7;
+
+                            &:focus {
+                                border: none;
+                            }
+
+                            &:focus-visible {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .payamount {
+            margin-top: 30px;
+
+            .imgss {
+                height: 100px;
+                display: flex;
+                padding: 10px 15px;
+                background-color: ghostwhite;
+
+                img {
+                    align-self: center;
+                }
+            }
+
+            .amount {
+                cursor: pointer;
+                height: 100px;
+                padding: 20px 25px;
+                background-color: #09A1F7;
+
+                h5 {
+                    text-align: center;
+                    color: white;
+                    font-size: 25px;
+                    font-weight: 600 !important;
+                    font-family: $fontfamily;
+                    margin-bottom: 0px;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .bottom-text {
+        margin-top: 50px;
+        padding: 0px 50px;
+
+        h4 {
+            text-align: center;
+            font-family: $fontfamily;
+            font-size: 23px;
+            font-weight: 700;
+            color: #6100FF;
+        }
+
+        p {
+            text-align: left;
+            color: #000;
+            font-size: 23px;
+            margin-top: 25px;
+            font-family: 400 !important;
         }
     }
 }
@@ -1947,6 +2180,15 @@ padding: 25px;
         #cols2 {
             order: 1 !important;
         }
+    }
+
+    .PaymentMain {
+        .positioncol1{
+            .imgss img{
+width: 100% !important;
+            }
+        }
+       
     }
 
 }
@@ -2351,6 +2593,31 @@ padding: 25px;
 
             .owlcaraousel {
                 padding: 40px 22px !important;
+            }
+        }
+    }
+
+    .PaymentMain {
+        .positioncol1{
+            position: relative;
+        }
+        .positioncol2{
+position: absolute;
+top: 0;
+        }
+        .leftcols{
+            padding-right: 12px !important;
+          }
+          .rightcols{
+            padding-left: 12px !important;
+          }
+        .bottom-text {
+            padding: 0px 12px !important;
+            h4{
+                font-size: 18px !important;
+            }
+            p{
+                font-size: 16px !important;
             }
         }
     }

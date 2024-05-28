@@ -56,7 +56,7 @@ const NGOPartner = () => {
 
     const handlenext = () => {
         let validationMsg = contactFormValidation(Data)
-        if (message?.status) {
+        if (validationMsg?.status) {
             setmessage(validationMsg)
         } else {
             setmessage(validationMsg)

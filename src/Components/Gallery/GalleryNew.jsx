@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Pagination } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import galleryimg1 from '../../Assets/galleryimg1.png';
-import galleryimg2 from '../../Assets/galleryimg2.png';
-import galleryimg3 from '../../Assets/galleryimg3.png';
 import galleryimg4 from '../../Assets/galleryimg4.png';
 import galleryimg5 from '../../Assets/galleryimg5.png';
-import galleryimg6 from '../../Assets/galleryimg6.png';
 import galleryimg7 from '../../Assets/galleryimg7.png';
-import galleryimg8 from '../../Assets/galleryimg8.png';
 import galleryimg9 from '../../Assets/galleryimg9.png';
 import arrowRight from '../../Assets/arrow-right.png'
+import galleryimage10 from '../../Assets/GalleryImages/galleryimage10.jpg'
+import galleryimage11 from '../../Assets/GalleryImages/galleryimage11.jpg'
+import galleryimage14 from '../../Assets/galleryimage14.jpg'
+import galleryimg16 from '../../Assets/GalleryImages/galleryimg16.jpg'
 export default function GalleryNew() {
     const [tabs, settabs] = useState('education');
     const [page, setPage] = useState(1);
@@ -35,22 +35,22 @@ const navigate = useNavigate();
                                 <img src={galleryimg1} width={'100%'} alt="image" className='mb-2' style={{height:'35%'}} />
                                 <div className="subcol d-flex">
                                     <div className="leftimg me-2">
-                                        <img src={galleryimg2} width={'100%'} alt="image" className='d-block mb-2' />
-                                        <img src={galleryimg3} width={'100%'} alt="image" className='d-block' />
+                                        <img src={galleryimage14} width={'100%'} alt="image" className='d-block mb-2' height={'28%'} />
+                                        <img src={galleryimg16} width={'100%'} alt="image" className='d-block' />
                                     </div>
                                     <div className="rightimg">
-                                        <img src={galleryimg4} width={'100%'} alt="image" />
+                                        <img src={galleryimg4} width={'100%'} alt="image" height={'73%'} />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-6 col-xs-12 mt-2 colss" style={{ paddingLeft: '6px' }}>
                                 <div className="topimg d-flex mb-2">
                                     <img src={galleryimg5} alt="image" width={'50%'} className="me-2" />
-                                    <img src={galleryimg6} alt="image" width={'50%'} />
+                                    <img src={galleryimage10} alt="image" width={'50%'} />
                                 </div>
                                 <img src={galleryimg7} alt="image" width={'100%'} />
                                 <div className="topimg d-flex my-2">
-                                    <img src={galleryimg8} alt="image" width={'50%'} className="me-2" />
+                                    <img src={galleryimage11} alt="image" width={'50%'} className="me-2" />
                                     <img src={galleryimg9} alt="image" width={'50%'} />
                                 </div>
                             </div>

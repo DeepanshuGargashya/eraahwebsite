@@ -30,7 +30,7 @@ export default function ContactUs() {
 
     const handlenext = () => {
         let validationMsg= contactFormValidation(Data)
-        if(message?.status){
+        if(validationMsg?.status){
             setmessage(validationMsg)
      }else{
         setmessage(validationMsg)
@@ -54,11 +54,11 @@ export default function ContactUs() {
                                     </div>
                                     <div className="datas d-flex">
                                         <img src={emailicon} alt="emailicon" width={'8%'} />
-                                        <h5>demo@gmail.com</h5>
+                                        <h5>shrey.bansal@eraah.org</h5>
                                     </div>
                                     <div className="datas d-flex">
                                         <img src={locationicon} alt="locationicon" width={'8%'} />
-                                        <h5>132 Dartmouth Street Boston,<br /> Massachusetts 02156 United States</h5>
+                                        <h5>B-38, Block M, Old DLF Colony,<br /> Sector 14, Gurugram, Haryana</h5>
                                     </div>
                                 </div>
                             </div>

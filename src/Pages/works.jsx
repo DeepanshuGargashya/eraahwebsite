@@ -53,7 +53,7 @@ function Works() {
                             </div>
                         </div>
                         <div className="subbox mt-3">
-                            <button className='submit-btn'>Donate Now <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
+                            <button className='submit-btn' onClick={()=>navigate('/payment')}>Donate Now <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
                         </div>
                     </div>
                     <div className="teacher-about-section">
@@ -152,7 +152,7 @@ function Works() {
                                     <div className="bottom-box text-center">
                                         <h4>Support Laxmi</h4>
                                         <div className="boxbottom">
-                                            <div className="btnbox">
+                                            <div className="btnbox" onClick={()=>(donateActive === true ? navigate('/payment') :'')}>
                                                 <div className={`arrowbox ${donateActive === true ? 'activehover' : ''}`} onMouseEnter={() => setdonateActive(true)} onMouseLeave={() => setdonateActive(false)}>
                                                     <div className="imgss">
                                                         <img src={arrowRight} alt="arrowRight" width={'70%'} />

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "../src/Components/Navbar/navbar";
@@ -42,15 +42,10 @@ const PaymentMain = React.lazy(() => import('./Pages/PaymentPages/PaymentMain'))
 
 function App() {
   const location = useLocation();
-  const [navbarActive, setnavbarActive] = useState(true);
   const isLoginPage =
     location.pathname === "/logIn" || location.pathname === "/signUp";
-
-  useEffect(() => {
-    if (window.location.href.includes('/payment')) {
-      setnavbarActive(false);
-    }
-  }, [])
+const navbarActive = window.location.href.includes('/payment') ? false : true
+  
   return (
     <>
       <div className="App">
