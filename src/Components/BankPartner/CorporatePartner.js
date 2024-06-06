@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import BecomePartner from '../../Assets/becomePartnerBackground.png'
 import partners from '../../Assets/partners.png'
 import { contactFormValidation } from '../../utils/Validation';
-
+import { ContactForm } from '../../Access/ActionCreator';
+import Loader from '../Loader';
 export default function CorporatePartner() {
     const [message, setmessage] = useState('');
     const [Data, setData] = useState({
@@ -15,6 +16,9 @@ export default function CorporatePartner() {
         sectionofsociety: '',
         helpu: '',
     });
+    const [loader, setLoader] = useState(false);
+    const [popupMsg, setpopupMsg] = useState('');
+    const [popupshow, setPopupshow] = useState(false);
 
     const handlechange = (e) => {
         const { name, value } = e.target;
@@ -31,13 +35,40 @@ export default function CorporatePartner() {
         let validationMsg = contactFormValidation(Data)
         if (validationMsg?.status) {
             setmessage(validationMsg)
+            let obj = {
+                firstName: Data?.fName,
+                lastName: Data?.lName,
+                ngoName: Data?.ngoName,
+                ngoAim: Data?.ngoAIM,
+                sections: Data?.sectionofsociety,
+                description: Data?.helpu,
+                email: Data?.email,
+                phone: Data?.contactus
+            }
+            setLoader(true);
+            ContactForm(obj, (response) => {
+                setLoader(false)
+                if (response == 'success') {
+                    setPopupshow(true);
+                    setpopupMsg('Form Submitted Succesfully')
+                } else {
+                    setPopupshow(true);
+                    setpopupMsg('Error: Please Try Again later!')
+                }
+            })
         } else {
             setmessage(validationMsg)
         }
 
     }
     return (
-        <><div className="corporatePartner">
+        <>
+         {
+                loader ?
+                    <Loader />
+                    : ''
+            }
+        <div className="corporatePartner">
             <div className="container-fluid bankPartner px-0 mb-4" style={{ marginTop: '70px' }}>
                 <div className="bankBanner">
                     <img style={{ width: '100%' }} src={BecomePartner} alt="" />
@@ -110,6 +141,20 @@ export default function CorporatePartner() {
                 </div>
             </div>
         </div>
+        {
+                popupshow ?
+                    <div class="modal" tabindex="-1">
+                        <div class="modal-dialog" style={{ display: 'block', top: '8%', marginRight: '0px' }}>
+                            <div class="modal-content">
+                                <div class="modal-header" style={{ borderBottom: '0px' }}>
+                                    <p style={{ fontSize: '25px', marginBottom: '0px', backgroundColor: popupMsg === 'Form Submitted Succesfully' ? 'green' : 'red' ,color:'white'}}>{popupMsg}</p>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setPopupshow(false)}></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    : ''}
         </>
     )
 }

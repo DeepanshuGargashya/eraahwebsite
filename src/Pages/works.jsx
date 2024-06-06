@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -19,14 +19,41 @@ import pdficon from '../Assets/pdficon.png';
 import works1 from '../Assets/works1.png';
 import works2 from '../Assets/works2.png';
 import works3 from '../Assets/works3.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { GetTeacherData } from '../Access/ActionCreator';
+import Loader from '../Components/Loader';
 function Works() {
     const [donateActive, setdonateActive] = useState(false)
     const navigate = useNavigate();
+    const location = useLocation();
+    const [teacherData, setTeacherData] = useState([]);
+    const [teacherId, setTeacherId] = useState('');
+    const [loader, setLoader] = useState(false);
+
+
+    useEffect(() => {
+        setLoader(true);
+        setTeacherId(location?.state?._id)
+        GetTeacherData(teacherId, (callback) => {
+            setLoader(false);
+            if (callback && callback?.message == "success" && callback?.data) {
+                setTeacherData(callback?.data)
+            } else if (callback?.error == true) {
+                navigate('/')
+            }
+            else {
+                console.log(callback)
+            }
+        })
+    }, [])
     return (
         <>
             {/* <HowItWorks/>
 <Map/> */}
+            {
+                loader ?
+                    <Loader />
+                    : ''}
             <div className="Donate_teacher-section">
                 <div className="container">
                     <div className="top-box d-flex justify-content-evenly flex-wrap">
@@ -37,7 +64,7 @@ function Works() {
                                 </div>
                             </div>
                             <div className="texts">
-                                <h5>95%</h5>
+                                <h5>{teacherData?.attendance !== undefined && teacherData?.attendance !== null && teacherData?.attendance !== '' ? teacherData?.attendance + '%' : '0%'}</h5>
                                 <p>Teacher Attendance</p>
                             </div>
                         </div>
@@ -53,7 +80,7 @@ function Works() {
                             </div>
                         </div>
                         <div className="subbox mt-3">
-                            <button className='submit-btn' onClick={()=>navigate('/payment')}>Donate Now <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
+                            <button className='submit-btn' onClick={() => navigate('/payment')}>Donate Now <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
                         </div>
                     </div>
                     <div className="teacher-about-section">
@@ -62,8 +89,8 @@ function Works() {
                                 <div className="info-box">
                                     <div className="top-section">
                                         <div className="leftbox">
-                                            <h4>Laxmi Prasad</h4>
-                                            <h6>Affiliated with <a onClick={()=>navigate('/NGOabout')} style={{cursor:'pointer'}}>YouInYou Foundation</a></h6>
+                                            <h4>{teacherData?.name || ''}</h4>
+                                            <h6>Affiliated with <a onClick={() => navigate(`/NGOabout/${encodeURIComponent(teacherData?.school?.schoolName || '')}`,{state:teacherData?.school?.schoolName })} style={{ cursor: 'pointer' }}>{teacherData?.school?.schoolName || ''}</a></h6>
                                         </div>
                                         <div className="rightbox">
                                             <div className="ratingbox">
@@ -80,48 +107,77 @@ function Works() {
                                         Innovative educator fostering creativity and critical thinking in Indian classrooms. She is from Nagpur, and has a MA in English Literature from Calcutta University.
                                     </h6>
                                     <div className="tabs-section flex-wrap">
-                                        <div className="tabs mt-2" style={{ backgroundColor: '#D2FCA8' }}>
-                                            <h5>English Teacher</h5>
-                                        </div>
-                                        <div className="tabs mt-2" style={{ backgroundColor: '#FFDBF5' }}>
-                                            <h5>Class VI, VII, VIII</h5>
-                                        </div>
+                                        {teacherData?.teachSubject?.subName ?
+                                            <div className="tabs mt-2" style={{ backgroundColor: '#D2FCA8' }}>
+                                                <h5>{teacherData?.teachSubject?.subName} Teacher</h5>
+                                            </div>
+                                            : ''}
+                                        {
+                                            teacherData?.teachSclass && teacherData?.teachSclass?.length > 0 ?
+                                                <div className="tabs mt-2" style={{ backgroundColor: '#FFDBF5' }}>
+                                                    <h5>
+                                                        {teacherData?.teacherData((value, index) => {
+                                                            if (index !== teacherData.teachSclass.length - 1) {
+                                                                return `${value.sclassName}, `;
+                                                            } else {
+                                                                return value.sclassName;
+                                                            }
+                                                        })}
+                                                    </h5>
+                                                </div>
+                                                : ""
+                                        }
                                         <div className="tabs mt-2" style={{ backgroundColor: '#BDE7FF' }}>
-                                            <h5>5 Years of Experience</h5>
+                                            <h5>3+ years of Experience</h5>
                                         </div>
 
                                     </div>
 
                                     <div className="imgss-banner mt-4">
-                                        <img src={donatesectionimg} alt="donatesectionimg" width={'100%'} />
+                                        <img src={teacherData?.photoUrl || ''} alt="donatesectionimg" width={'100%'} />
                                     </div>
                                     <div className="numberofStudents d-flex justify-content-between mt-4">
                                         <h5>Students</h5>
                                         <h5 className='h5'>Children Taught &nbsp;<span>12</span></h5>
                                     </div>
-                                    <div className="studentsimage d-flex">
-                                        <div className="tab1 text-center">
-                                            <img src={student} alt="student" width={'85%'} />
-                                            <p>Karan Vir</p>
-                                        </div>
-                                        <div className="tab1 text-center">
-                                            <img src={student} alt="student" width={'85%'} />
-                                            <p>Karan Vir</p>
-                                        </div>
-                                        <div className="tab1 text-center">
-                                            <img src={student} alt="student" width={'85%'} />
-                                            <p>Karan Vir</p>
-                                        </div>
-                                        <div className="tab1 text-center">
-                                            <img src={student} alt="student" width={'85%'} />
-                                            <p>Karan Vir</p>
-                                        </div>
-                                        <div className="tab1 text-center">
-                                            <img src={student} alt="student" width={'85%'} />
-                                            <p>Karan Vir</p>
-                                        </div>
 
+                                    <div className="studentsimage d-flex">
+                                        {
+                                            teacherData?.studentsList && teacherData?.studentsList?.length > 0 ?
+                                                teacherData?.studentsList.map((value, index) => {
+                                                    if (index == 5) {
+                                                        return
+                                                    }
+                                                    return (
+                                                        <div className="tab1 text-center" key={index}>
+                                                            <img src={value.photoUrl || ''} alt="student" width={'85%'} />
+                                                            <p>{value.name || ''}</p>
+                                                        </div>
+                                                    )
+                                                })
+                                                : ''}
+                                        {/* <div className="tab1 text-center">
+                                            <img src={student} alt="student" width={'85%'} />
+                                            <p>Karan Vir</p>
+                                        </div>
+                                        <div className="tab1 text-center">
+                                            <img src={student} alt="student" width={'85%'} />
+                                            <p>Karan Vir</p>
+                                        </div>
+                                        <div className="tab1 text-center">
+                                            <img src={student} alt="student" width={'85%'} />
+                                            <p>Karan Vir</p>
+                                        </div>
+                                        <div className="tab1 text-center">
+                                            <img src={student} alt="student" width={'85%'} />
+                                            <p>Karan Vir</p>
+                                        </div>
+                                        <div className="tab1 text-center">
+                                            <img src={student} alt="student" width={'85%'} />
+                                            <p>Karan Vir</p>
+                                        </div> */}
                                     </div>
+
                                 </div>
                             </div>
                             <div className="col-lg-5 col-sm-12">
@@ -152,7 +208,7 @@ function Works() {
                                     <div className="bottom-box text-center">
                                         <h4>Support Laxmi</h4>
                                         <div className="boxbottom">
-                                            <div className="btnbox" onClick={()=>(donateActive === true ? navigate('/payment') :'')}>
+                                            <div className="btnbox" onClick={() => (donateActive === true ? navigate('/payment') : '')}>
                                                 <div className={`arrowbox ${donateActive === true ? 'activehover' : ''}`} onMouseEnter={() => setdonateActive(true)} onMouseLeave={() => setdonateActive(false)}>
                                                     <div className="imgss">
                                                         <img src={arrowRight} alt="arrowRight" width={'70%'} />
@@ -172,7 +228,7 @@ function Works() {
                 </div>
                 <div className="caraousels">
                     <div className="container owlcaraousel">
-                    <h5>PROOF OF PROGRESS</h5>
+                        <h5>PROOF OF PROGRESS</h5>
                         <OwlCarousel className='owl-theme' loop dots={false} responsiveClass={true}
                             responsive={
                                 {
@@ -202,10 +258,10 @@ function Works() {
                                     }
                                 }
                             }>
-                           <Cards image={works1} text={'Teacher teaching in classroom'} />
+                            <Cards image={works1} text={'Teacher teaching in classroom'} />
                             <Cards image={works2} text={'Reportcard1.pdf'} />
                             <Cards image={works3} text={'Teacher teaching in classroom'} />
-                           <Cards image={works1} text={'Teacher teaching in classroom'} />
+                            <Cards image={works1} text={'Teacher teaching in classroom'} />
                             <Cards image={works2} text={'Reportcard1.pdf'} />
                             <Cards image={works3} text={'Teacher teaching in classroom'} />
 
@@ -213,8 +269,9 @@ function Works() {
                     </div>
                 </div>
 
-                <Map heading={'Support a Teacher near you!'} text={'Explore a map with requests from teachers across the country'}/>
+                <Map heading={'Support a Teacher near you!'} text={'Explore a map with requests from teachers across the country'} />
             </div>
+
         </>
     )
 }

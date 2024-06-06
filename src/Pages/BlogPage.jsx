@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import searchicon from '../Assets/searchicon.png'
 import blogbannerimg from '../Assets/blogbannerimg.png'
 import blogpagebannerimg from '../Assets/blogpage-bannerimg.png'
@@ -14,6 +14,8 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useNavigate } from 'react-router-dom'
 const BlogPage = () => {
     const navigate = useNavigate();
+    const [filteredBlog , setFilteredBlog] =useState([]);
+    const [searchQuery,setSearchQuery]=useState('');
     const [activeBlog, setActiveBlog] = useState(
         {
             image: blogpageimg1,
@@ -55,9 +57,22 @@ const BlogPage = () => {
         },
     ];
     const handleBlogs = (data) => {
-        console.log("data",data)
         setActiveBlog(data)
     }
+
+
+    useEffect(()=>{
+  const filteredData = BlogsArray.filter((item) =>
+        item.heading.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      if (searchQuery === "") {
+        setFilteredBlog(filteredData);
+        setActiveBlog(filteredData[0])
+    } else {
+        setFilteredBlog(filteredData);
+        setActiveBlog(filteredData[0])
+      }
+    },[searchQuery,BlogsArray])
     return (
         <>
             <div className="BlogPage">
@@ -65,20 +80,22 @@ const BlogPage = () => {
                     <div className="container">
                         <div className="row d-flex justify-content-center">
                             <div class="input-group inputgrp mb-3 px-0">
-                                <input type="text" class="form-control inputtag" placeholder="Search articles..." aria-label="Search articles..." aria-describedby="basic-addon2" />
+                                <input type="text" class="form-control inputtag" placeholder="Search articles..." aria-label="Search articles..." aria-describedby="basic-addon2" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)}/>
                                 <span class="input-group-text inputtext" id="basic-addon2"><img src={searchicon} alt="Search" width={'70%'} /></span>
                             </div>
 
-                           { console.log("activeBlog",activeBlog)}
-                            {activeBlog !== null ? 
+                            {activeBlog !== null && activeBlog?.heading !== '' && activeBlog?.heading !== null &&  activeBlog?.heading !== undefined ?
                                    <>
-                                        <img src={activeBlog.image} alt="image" className='mt-5' />
+                                        <img src={activeBlog?.image || ''} alt="image" className='mt-5' />
                                         <div className="blogtype mt-3">
                                             <h5>Education</h5>
-                                            <h3 className='mt-1'>{activeBlog.heading}</h3>
-                                            <h6>By {activeBlog.WrittenBy}</h6>
-                                            <p>{activeBlog.DateBy}</p>
-                                            <h4 onClick={()=>navigate(`/blog/${encodeURIComponent(activeBlog.heading)}`,{state:activeBlog})}>Read Now</h4>
+                                            <h3 className='mt-1'>{activeBlog?.heading || ''}</h3>
+                                            <h6>By {activeBlog?.WrittenBy || ''}</h6>
+                                            <p>{activeBlog?.DateBy || ''}</p>
+                                            {
+                                                activeBlog?.heading !== '' && activeBlog?.heading !== null &&  activeBlog?.heading !== undefined ?
+                                                <h4 onClick={()=>navigate(`/blog/${encodeURIComponent(activeBlog.heading)}`,{state:activeBlog})}>Read Now</h4>
+                                            :''}
                                         </div>
                                         </>   :''
                                 }
@@ -98,7 +115,7 @@ const BlogPage = () => {
                                     autoplayTimeout: 3000,
                                 },
                                 600: {
-                                    items: 2,
+                                    items: filteredBlog?.length >2 ? 2 : filteredBlog?.length,
                                     dots: true,
                                     nav: false,
                                     loop: true,
@@ -106,7 +123,7 @@ const BlogPage = () => {
                                     autoplayTimeout: 3000,
                                 },
                                 1000: {
-                                    items: 3,
+                                    items: filteredBlog?.length >3 ? 3 : filteredBlog?.length,
                                     dots: true,
                                     nav: false,
                                     loop: true,
@@ -116,7 +133,7 @@ const BlogPage = () => {
                             }
                         }>
                         {
-                            BlogsArray.map((value, index) => {
+                            filteredBlog.map((value, index) => {
                                 return (
                                     <Cards key={index} image={value.image} text={value.heading} author={value.WrittenBy} date={value.DateBy} data={value} handleBlogs={handleBlogs} />
                                 )

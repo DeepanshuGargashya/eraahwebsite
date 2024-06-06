@@ -55,7 +55,7 @@ const navbarActive = window.location.href.includes('/payment') ? false : true
             <Route exact path="/" element={<Blog />} />
             <Route exact path="/works" element={<Homepage />} />
             <Route exact path="/donate" element={<Works />} />
-            <Route exact path="/NGOabout" element={<NGOOpens />} />
+            <Route exact path="/NGO/:NGOName" element={<NGOOpens />} />
 
             <Route exact path="/blog" element={<BlogPage />} />
             <Route exact path="/blog/:blogheading" element={<BlogPageview />} />

@@ -17,10 +17,10 @@ function BlogBanner() {
                     <div id="carouselExampleControls" class="carousel slide px-0" data-bs-ride="carousel">
                         <div class="carousel-inner px-0">
                             <div class="carousel-item active">
-                                <img src={bannercaraousel1} class="image-blurs d-block" alt="image 1" width={'100%'} />
+                                <img src={bannercaraousel2} class="image-blurs d-block" alt="image 2" width={'100%'} />
                             </div>
                             <div class="carousel-item">
-                                <img src={bannercaraousel2} class="image-blurs d-block" alt="image 2" width={'100%'} />
+                                <img src={bannercaraousel1} class="image-blurs d-block" alt="image 1" width={'100%'} />
                             </div>
                             <div class="carousel-item">
                                 <img src={bannercaraousel3} class="image-blurs d-block" alt="image 3" width={'100%'} />

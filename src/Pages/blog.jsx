@@ -17,12 +17,12 @@ function Blog() {
   return (
     <>
       <BlogBanner />
-      <div className="container">
+      {/* <div className="container">
         <div className="row support-teachers mt-5 mb-2">
           <h2 className="text-center">
             Support our <span>teachers</span>
           </h2>
-          {/* <i class="fa fa-camera fa-stack-1x"></i> */}
+         
           <input
             class="form-control me-2 my-3 px-4"
             type="search"
@@ -30,7 +30,6 @@ function Blog() {
             aria-label="Search"
           />
         </div>
-        {/* <div className=""> */}
         <div className="row search-tags">
           <div
             className="all col-lg-1 col-md-2 col-sm-3 text-center"
@@ -286,8 +285,7 @@ function Blog() {
             </span>
           </div>
         </div>
-        {/* </div> */}
-      </div>
+      </div> */}
       <PaginationCard />
       {/* <div className="container app">
             <div className="row">

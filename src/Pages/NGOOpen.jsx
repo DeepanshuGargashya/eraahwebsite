@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -25,8 +25,15 @@ import teacher3 from '../Assets/teacher3.png';
 import works1 from '../Assets/works1.png';
 import works2 from '../Assets/works2.png';
 import works3 from '../Assets/works3.png';
+import { useLocation,useNavigate } from 'react-router-dom';
 function NGOOpen() {
-    const [donateActive, setdonateActive] = useState(false)
+    const [donateActive, setdonateActive] = useState(false);
+    const [ngoName,setNgoName] =useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    useEffect(()=>{
+        setNgoName(location.state)
+    },[])
     return (
         <>
             <div className="Donate_teacher-section NGO-Open">
@@ -202,7 +209,7 @@ function NGOOpen() {
                                                 <Cards2 image={teacher3} text={'Neeraj Das'} />
                                             </OwlCarousel>
                                         </div>
-                                        <button className='submit-btn mt-3'>Donate Now  <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
+                                        <button className='submit-btn mt-3' onClick={()=>navigate('/donate')}>Donate Now  <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button>
                                     </div>
                                 </div>
                             </div>
