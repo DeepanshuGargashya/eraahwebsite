@@ -66,8 +66,9 @@ function CustomNavbar() {
                     <li><NavLink className={`links ${location.pathname === '/blog' ? 'active' : ''}`} to={'/blog'} onClick={() => scrollToUpward('Blog')}>Blog</NavLink></li>
 
                     <li> <NavLink className={`links ${location.pathname === '/donate' ? 'active' : ''}`} to={'/donate'} onClick={() => scrollToUpward('Donate')}> <button type="button" className="btn">Donate <img src={arrowRight} alt="ArrowIcon" width={'20%'} style={{ marginTop: '-3px' }} /></button></NavLink></li>
+                    <li> <NavLink className={`links ${location.pathname === '/logIn' ? 'active' : ''}`} to={'/logIn'} onClick={() => scrollToUpward('logIn')}>Log in</NavLink></li>
 
-                    <li><a className={`links ${location.pathname === '/logIn' ? 'active' : ''}`} href='https://msite.eraah.org/' target="_blank" onClick={scrollToUpward('')}>Log in</a></li>
+                    {/* <li><a className={`links ${location.pathname === '/logIn' ? 'active' : ''}`} href='https://msite.eraah.org/' target="_blank" onClick={scrollToUpward('')}>Log in</a></li> */}
                 </div>
                 <div className="nav-toggler-icon" onClick={handleOpen}>
                     <GiHamburgerMenu className='hamIcon' />

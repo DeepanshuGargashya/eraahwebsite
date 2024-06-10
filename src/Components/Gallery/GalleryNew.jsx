@@ -30,9 +30,9 @@ export default function GalleryNew() {
 
     const navigate = useNavigate();
     useEffect(() => {
-        setloader(true)
+        // setloader(true)
         getGalleryImages({ ngoId: '' }, (callback) => {
-            setloader(false)
+            // setloader(false)
             if (callback && callback?.message == 'success' && callback?.data?.length > 0) {
                 setImageData(callback?.data)
                 setpageCount(Math.ceil(callback.data?.length / itemsPerPage));

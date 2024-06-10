@@ -8,7 +8,7 @@ export const GetAllTeachers = (callBack, error) => {
         callBack(res);
       })
       .catch((e) => {
-       callBack(e.response.data)
+       callBack(e?.response?.data)
       });
   };
 export const GetTeacherData = (id,callBack, error) => {
@@ -18,7 +18,7 @@ export const GetTeacherData = (id,callBack, error) => {
         callBack(res);
       })
       .catch((e) => {
-       callBack(e.response.data)
+       callBack(e?.response?.data)
       });
   };
 export const ContactForm = (data,callBack, error) => {
@@ -28,7 +28,7 @@ export const ContactForm = (data,callBack, error) => {
         callBack(res);
       })
       .catch((e) => {
-       callBack(e.response.data)
+       callBack(e)
       });
   };
 
@@ -39,6 +39,6 @@ export const getGalleryImages = (data,callBack, error) => {
         callBack(res);
       })
       .catch((e) => {
-       callBack(e.response.data)
+       callBack(e)
       });
   };

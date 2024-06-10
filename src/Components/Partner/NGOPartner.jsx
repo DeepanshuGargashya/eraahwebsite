@@ -79,6 +79,16 @@ const NGOPartner = () => {
                 if (response == 'success') {
                     setPopupshow(true);
                     setpopupMsg('Form Submitted Succesfully')
+                    setData({
+                        fName: '',
+                        lName: '',
+                        ngoName: '',
+                        ngoAIM: '',
+                        email: '',
+                        contactus: '',
+                        sectionofsociety: '',
+                        helpu: '',
+                    });
                 } else {
                     setPopupshow(true);
                     setpopupMsg('Error: Please Try Again later!')
@@ -114,7 +124,7 @@ const NGOPartner = () => {
                     </div>
                 </div>
 
-                <div className="partners">
+                {/* <div className="partners">
                     <div className="head">
                         <h5>Our Partnerships</h5>
                     </div>
@@ -161,9 +171,9 @@ const NGOPartner = () => {
                     <div className="btns d-flex justify-content-center">
                         <button className='submit-btn'>Sell All Partners</button>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="howcanwehelp-Section">
+                <div className="howcanwehelp-Section mt-4">
                     <div className="container">
                         <div className="heads">
                             <h3>How we can help you</h3>
@@ -358,11 +368,11 @@ const NGOPartner = () => {
             </div>
             {
                 popupshow ?
-                    <div class="modal" tabindex="-1">
+                    <div class="modal" tabindex="-1" style={{display:'block'}}>
                         <div class="modal-dialog" style={{ display: 'block', top: '8%', marginRight: '0px' }}>
                             <div class="modal-content">
-                                <div class="modal-header" style={{ borderBottom: '0px' }}>
-                                    <p style={{ fontSize: '25px', marginBottom: '0px', backgroundColor: popupMsg === 'Form Submitted Succesfully' ? 'green' : 'red',color:'white' }}>{popupMsg}</p>
+                                <div class="modal-header" style={{ borderBottom: '0px' ,backgroundColor: popupMsg === 'Form Submitted Succesfully' ? 'green' : 'red' }}>
+                                    <p style={{ fontSize: '25px', marginBottom: '0px',color:'white' }}>{popupMsg}</p>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setPopupshow(false)}></button>
                                 </div>
 

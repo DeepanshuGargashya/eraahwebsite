@@ -33,18 +33,23 @@ function Works() {
 
     useEffect(() => {
         setLoader(true);
-        setTeacherId(location?.state?._id)
-        GetTeacherData(teacherId, (callback) => {
-            setLoader(false);
-            if (callback && callback?.message == "success" && callback?.data) {
-                setTeacherData(callback?.data)
-            } else if (callback?.error == true) {
-                navigate('/')
-            }
-            else {
-                console.log(callback)
-            }
-        })
+        if (location?.state?._id == undefined || location?.state?._id == null || location?.state?._id == '') {
+            navigate('/');
+        } else {
+
+            setTeacherId(location?.state?._id)
+            GetTeacherData(location?.state?._id, (callback) => {
+                setLoader(false);
+                if (callback && callback?.data?.message == "success" && callback?.data?.data) {
+                    setTeacherData(callback?.data?.data)
+                } else if (callback?.error == true) {
+                    navigate('/')
+                }
+                else {
+                    console.log(callback)
+                }
+            })
+        }
     }, [])
     return (
         <>
@@ -64,7 +69,7 @@ function Works() {
                                 </div>
                             </div>
                             <div className="texts">
-                                <h5>{teacherData?.attendance !== undefined && teacherData?.attendance !== null && teacherData?.attendance !== '' ? teacherData?.attendance + '%' : '0%'}</h5>
+                                <h5>{teacherData?.attendance?.length > 0 ? teacherData?.attendance + '%' : '0%'}</h5>
                                 <p>Teacher Attendance</p>
                             </div>
                         </div>
@@ -90,7 +95,7 @@ function Works() {
                                     <div className="top-section">
                                         <div className="leftbox">
                                             <h4>{teacherData?.name || ''}</h4>
-                                            <h6>Affiliated with <a onClick={() => navigate(`/NGOabout/${encodeURIComponent(teacherData?.school?.schoolName || '')}`,{state:teacherData?.school?.schoolName })} style={{ cursor: 'pointer' }}>{teacherData?.school?.schoolName || ''}</a></h6>
+                                            <h6>Affiliated with <a onClick={() => navigate(`/NGO/${encodeURIComponent(teacherData?.school?.schoolName || '')}`, { state: teacherData?.school?.schoolName })} style={{ cursor: 'pointer' }}>{teacherData?.school?.schoolName || ''}</a></h6>
                                         </div>
                                         <div className="rightbox">
                                             <div className="ratingbox">
@@ -116,7 +121,7 @@ function Works() {
                                             teacherData?.teachSclass && teacherData?.teachSclass?.length > 0 ?
                                                 <div className="tabs mt-2" style={{ backgroundColor: '#FFDBF5' }}>
                                                     <h5>
-                                                        {teacherData?.teacherData((value, index) => {
+                                                        {teacherData?.teachSclass?.map((value, index) => {
                                                             if (index !== teacherData.teachSclass.length - 1) {
                                                                 return `${value.sclassName}, `;
                                                             } else {
@@ -134,11 +139,11 @@ function Works() {
                                     </div>
 
                                     <div className="imgss-banner mt-4">
-                                        <img src={teacherData?.photoUrl || ''} alt="donatesectionimg" width={'100%'} />
+                                        <img src={teacherData?.photoUrl || ''} alt="Teacher Image" width={'100%'} />
                                     </div>
                                     <div className="numberofStudents d-flex justify-content-between mt-4">
                                         <h5>Students</h5>
-                                        <h5 className='h5'>Children Taught &nbsp;<span>12</span></h5>
+                                        <h5 className='h5'>Children Taught &nbsp;<span>{teacherData?.studentsList?.length || 0}</span></h5>
                                     </div>
 
                                     <div className="studentsimage d-flex">

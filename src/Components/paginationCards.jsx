@@ -3,7 +3,7 @@ import react, { useState, useEffect } from "react";
 import Pagination1 from "../Assets/pagination1.png";
 import iphoneimg from "../Assets/iphoneimg.png";
 import Save from "../Assets/save.png";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink ,useNavigate} from "react-router-dom";
 import trusticon from '../Assets/trusticon.png'
 import impact from '../Assets/impact.png'
 import transaparency from '../Assets/transaparency.png'
@@ -20,80 +20,7 @@ function PaginationCard() {
   const [searchQuery, setSearchQuery] = useState('');
   const [arrayData, setArrayData] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
-  // const arrayData = [
-  //   {
-  //     count: '12',
-  //     name: 'Laxfdghjmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxmi Pragfhjksad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxhgvhjmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'LaxmihjPrasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'LaxmijjPrasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'LaxmPrasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: ' Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Lmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxmi Pad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  //   {
-  //     count: '12',
-  //     name: 'Laxmi Prasad',
-  //     text: 'Innovative educator fostering creativity and critical thinking in Indian classrooms. She teaches Art.',
-
-  //   },
-  // ]
+ const navigate = useNavigate();
   const [checkedbookmark, setcheckedbookmark] = useState(Array(arrayData.length).fill(false));
   function scrollToUpward() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -109,10 +36,10 @@ function PaginationCard() {
     setLoader(true)
     GetAllTeachers((callback) => {
       setLoader(false)
-      if (callback && callback?.message == "success" && callback?.data?.length > 0) {
-        setArrayData(callback.data)
-    setpageCount(Math.ceil(callback.data?.length / itemsPerPage));
-    setDisplayedData(callback.data?.slice((page - 1) * itemsPerPage, page * itemsPerPage))
+      if (callback && callback?.data?.message == "success" && callback?.data?.data?.length > 0) {
+        setArrayData(callback.data.data)
+    setpageCount(Math.ceil(callback.data.data?.length / itemsPerPage));
+    setDisplayedData(callback.data.data?.slice((page - 1) * itemsPerPage, page * itemsPerPage))
     scrollToUpward()
       } else {
         console.log(callback)
@@ -132,6 +59,10 @@ function PaginationCard() {
       setDisplayedData(filteredData.slice(0, itemsPerPage));
     }
   }, [searchQuery, page, arrayData]);
+
+  const handleNavigation=(data)=>{
+    navigate('/donate',{state:data})
+  }
 
   return (
     <>
@@ -162,7 +93,7 @@ function PaginationCard() {
                     <>
                       <Blogcard key={index} index={index} img={value?.photoUrl || ''} count={value.classTeacher}
                         name={value.name} subject={value?.teachSubject?.subName || ''} data={value}
-                        handlebookmark={() => handlebookmark(index)} checkedbookmark={checkedbookmark[index]} scrollToUpward={scrollToUpward} />
+                        handlebookmark={() => handlebookmark(index)} checkedbookmark={checkedbookmark[index]} handleNavigation={handleNavigation} />
                     </>
                   )
                 })
@@ -194,7 +125,7 @@ function PaginationCard() {
             ''}
 
       </div>
-      <div className="introtoPlatform pb-4">
+      {/* <div className="introtoPlatform pb-4">
         <div className="container">
           <div className="row heading">
             <h5>INTRODUCING OUR PLATFORM</h5>
@@ -242,20 +173,20 @@ function PaginationCard() {
                     <img src={appStoreicon} alt="appStoreicon" width={'25%'} />
                     <h5>GET IT ON <br /> App Store</h5>
                   </a>
-                  {/* <a href=""><img src={appStoreicon} alt="appStoreicon"  width={'70%'}/></a> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
 
 export default PaginationCard;
 
-function Blogcard({ index, img, count, name, subject, handlebookmark, checkedbookmark, scrollToUpward,data }) {
+function Blogcard({ index, img, count, name, subject, handlebookmark, checkedbookmark, handleNavigation,data }) {
+
   return (
     <>
       <div class="col-lg-4 col-sm-6 mt-4 ">
@@ -282,15 +213,7 @@ function Blogcard({ index, img, count, name, subject, handlebookmark, checkedboo
                 }
               </div>
               <div className="btns">
-                <NavLink
-                  to={{
-                    pathname:"/donate",
-                  state:data}}
-                  style={{ textDecoration: "none" }}
-                  onClick={scrollToUpward}
-                >
-                  <a class="btn btn-primary purple">Donate now</a>
-                </NavLink>
+                  <a class="btn btn-primary purple"onClick={()=>handleNavigation(data)}>Donate now</a>
               </div>
             </div>
           </div>
