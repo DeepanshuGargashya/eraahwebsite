@@ -42,3 +42,13 @@ export const getGalleryImages = (data,callBack, error) => {
        callBack(e)
       });
   };
+export const getBlogs = (callBack, error) => {
+    axios
+      .get(APIS.BLOGS)
+      .then((res) => {
+        callBack(res);
+      })
+      .catch((e) => {
+       callBack(e)
+      });
+  };

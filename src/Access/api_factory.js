@@ -6,5 +6,6 @@ export const APIS = {
     GET_TEACHER_DATA: BASE_URL + 'api/getSelectedTeacherDetails?id=',
     CONTACT_FORM: BASE_URL + 'contact',
     GALLERY_IMAGES: BASE_URL + 'NGO/getGallery',
+    BLOGS: BASE_URL + 'blogs',
 };
 
