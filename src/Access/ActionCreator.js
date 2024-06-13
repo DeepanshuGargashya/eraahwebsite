@@ -32,9 +32,9 @@ export const ContactForm = (data,callBack, error) => {
       });
   };
 
-export const getGalleryImages = (data,callBack, error) => {
+export const getGalleryImages = (callBack, error) => {
     axios
-      .post(APIS.GALLERY_IMAGES ,data)
+      .get(APIS.GALLERY_IMAGES)
       .then((res) => {
         callBack(res);
       })

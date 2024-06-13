@@ -31,12 +31,12 @@ export default function GalleryNew() {
     const navigate = useNavigate();
     useEffect(() => {
         // setloader(true)
-        getGalleryImages({ ngoId: '' }, (callback) => {
+        getGalleryImages((callback) => {
             // setloader(false)
-            if (callback && callback?.message == 'success' && callback?.data?.length > 0) {
-                setImageData(callback?.data)
-                setpageCount(Math.ceil(callback.data?.length / itemsPerPage));
-                setDisplayedData(callback.data?.slice((page - 1) * itemsPerPage, page * itemsPerPage))
+            if (callback && callback?.data?.message == 'success' && callback?.data?.data?.length > 0) {
+                setImageData(callback?.data?.data)
+                setpageCount(Math.ceil(callback.data?.data?.length / itemsPerPage));
+                setDisplayedData(callback.data?.data?.slice((page - 1) * itemsPerPage, page * itemsPerPage))
                 heightfunction();
             }
         })
@@ -102,13 +102,13 @@ export default function GalleryNew() {
                     <div className="head">
                         <h4>Gallery</h4>
                     </div>
-                    <div className="tabs d-flex justify-content-center mt-5">
+                    {/* <div className="tabs d-flex justify-content-center mt-5">
                         <h6 className={`${tabs === 'home' ? 'active' : ''}`} onClick={() => handletabs('home')}>Home</h6>
                         <h6 className={`${tabs === 'education' ? 'active' : ''}`} onClick={() => handletabs('education')}>Education</h6>
                         <h6 className={`${tabs === 'health' ? 'active' : ''}`} onClick={() => handletabs('health')}>Health</h6>
                         <h6 className={`${tabs === 'animal' ? 'active' : ''}`} onClick={() => handletabs('animal')}>Animal</h6>
                         <h6 className={`${tabs === 'oldAge' ? 'active' : ''}`} onClick={() => handletabs('oldAge')}>Old Age</h6>
-                    </div>
+                    </div> */}
                     <div className="imagessection">
                         <div className="row">
                             <div className="col-lg-6 col-xs-12 mt-2 colss" style={{ paddingRight: '6px', paddingLeft: '6px' }} >
