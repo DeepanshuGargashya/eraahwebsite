@@ -145,16 +145,15 @@ function Works() {
                                         <h5>Students</h5>
                                         <h5 className='h5'>Children Taught &nbsp;<span>{teacherData?.studentsList?.length || 0}</span></h5>
                                     </div>
-
-                                    <div className="studentsimage d-flex">
+                                    <div className="studentsimage d-flex" style={{ overflowX: 'scroll' }}>
                                         {
                                             teacherData?.studentsList && teacherData?.studentsList?.length > 0 ?
                                                 teacherData?.studentsList.map((value, index) => {
-                                                    if (index == 5) {
-                                                        return
-                                                    }
+                                                    // if (index >= 5) {
+                                                    //     return
+                                                    // }
                                                     return (
-                                                        <div className="tab1 text-center" key={index}>
+                                                        <div className="tab1 text-center" key={index} style={{minWidth:'20%'}}>
                                                             <img src={value.photoUrl || ''} alt="student" width={'85%'} />
                                                             <p>{value.name || ''}</p>
                                                         </div>
@@ -181,6 +180,8 @@ function Works() {
                                             <img src={student} alt="student" width={'85%'} />
                                             <p>Karan Vir</p>
                                         </div> */}
+
+
                                     </div>
 
                                 </div>

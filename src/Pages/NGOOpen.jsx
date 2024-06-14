@@ -120,23 +120,23 @@ function NGOOpen() {
                                         <h5 className='h5'>See All</h5>
                                     </div>
                                     <div className="studentsimage d-flex">
-                                        <div className="tab1 text-center">
+                                        <div className="tab1 text-center" width={'20%'}>
                                             <img src={team1} alt="team1" width={'85%'} />
                                             <p>Lameen Abdul-Malik</p>
                                         </div>
-                                        <div className="tab1 text-center">
+                                        <div className="tab1 text-center" width={'20%'}>
                                             <img src={team2} alt="team2" width={'85%'} />
                                             <p>Nishant Rao</p>
                                         </div>
-                                        <div className="tab1 text-center">
+                                        <div className="tab1 text-center" width={'20%'}>
                                             <img src={team3} alt="team3" width={'85%'} />
                                             <p>Nupur Garg</p>
                                         </div>
-                                        <div className="tab1 text-center">
+                                        <div className="tab1 text-center" width={'20%'}>
                                             <img src={team4} alt="team4" width={'85%'} />
                                             <p>Pankaj Bansal</p>
                                         </div>
-                                        <div className="tab1 text-center">
+                                        <div className="tab1 text-center" width={'20%'}>
                                             <img src={team4} alt="team4" width={'85%'} />
                                             <p>Pankaj Bansal</p>
                                         </div>
