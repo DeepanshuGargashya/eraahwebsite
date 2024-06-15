@@ -64,11 +64,11 @@ const navigate = useNavigate();
                     Mission And Vision
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to={"/gallery"} onClick={() => scrollToUpward("Home")}>
                     Gallery
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to={"/partnerNGO"} onClick={() => scrollToUpward("Home")}>
                     Partner NGOS

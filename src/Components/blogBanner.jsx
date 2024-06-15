@@ -14,7 +14,7 @@ function BlogBanner() {
         <>
             <div className="container-fluid" style={{ marginTop: '70px' }}>
                 <div className="row mt-5 banner" >
-                    <div id="carouselExampleControls" class="carousel slide px-0" data-bs-ride="carousel">
+                    {/* <div id="carouselExampleControls" class="carousel slide px-0" data-bs-ride="carousel">
                         <div class="carousel-inner px-0">
                             <div class="carousel-item active">
                                 <img src={bannercaraousel2} class="image-blurs d-block" alt="image 2" width={'100%'} />
@@ -37,9 +37,10 @@ function BlogBanner() {
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                    </div> */}
                     {/* <img src={BannerImage} class=" px-0" alt="" /> */}
-                    <div className="banner-content">
+                    <div className="banner-content" style={{position:'unset',backgroundColor:'purple',padding:'70px 0px'}}>
+                    {/* <div className="banner-content"> */}
                         <h1 className='mb-0 text-center'>Positive change starts <br /> with <span>your action</span></h1>
                         <p className='text-center mt-1'>Join us in making a difference that truly matters</p>
 

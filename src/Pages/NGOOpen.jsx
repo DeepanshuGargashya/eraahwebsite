@@ -248,12 +248,17 @@ function NGOOpen() {
                                     }
                                 }
                             }>
-                            <Cards image={works1} text={'Teacher teaching in classroom'} />
+                            {/* <Cards image={works1} text={'Teacher teaching in classroom'} /> */}
                             <Cards image={works2} text={'Reportcard1.pdf'} />
-                            <Cards image={works3} text={'Teacher teaching in classroom'} />
+                            <Cards image={works2} text={'Reportcard1.pdf'} />
+                            <Cards image={works2} text={'Reportcard1.pdf'} />
+                            <Cards image={works2} text={'Reportcard1.pdf'} />
+                            <Cards image={works2} text={'Reportcard1.pdf'} />
+                            <Cards image={works2} text={'Reportcard1.pdf'} />
+                            {/* <Cards image={works3} text={'Teacher teaching in classroom'} />
                            <Cards image={works1} text={'Teacher teaching in classroom'} />
                             <Cards image={works2} text={'Reportcard1.pdf'} />
-                            <Cards image={works3} text={'Teacher teaching in classroom'} />
+                            <Cards image={works3} text={'Teacher teaching in classroom'} /> */}
                         </OwlCarousel>
                     </div>
                 </div>
