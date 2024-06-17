@@ -112,9 +112,18 @@ function Works() {
                                         Innovative educator fostering creativity and critical thinking in Indian classrooms. She is from Nagpur, and has a MA in English Literature from Calcutta University.
                                     </h6>
                                     <div className="tabs-section flex-wrap">
-                                        {teacherData?.teachSubject?.subName ?
+                                        {teacherData?.teachSubject && teacherData?.teachSubject?.length >0 ?
                                             <div className="tabs mt-2" style={{ backgroundColor: '#D2FCA8' }}>
-                                                <h5>{teacherData?.teachSubject?.subName} Teacher</h5>
+                                                <h5>
+                                                {teacherData?.teachSubject?.map((value,index)=>{
+                                                    if (index !== teacherData.teachSubject.length - 1) {
+                                                        return `${value?.subName}, `;
+                                                    } else {
+                                                        return `${value?.subName} Teacher`;
+                                                    }
+                                                })  }
+                                                </h5>
+                                                {/* <h5>{teacherData?.teachSubject?.subName} Teacher</h5> */}
                                             </div>
                                             : ''}
                                         {
