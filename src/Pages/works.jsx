@@ -162,18 +162,18 @@ function Works() {
                                                     //     return
                                                     // }
                                                     return (
-                                                        <div className="tab1 text-center" key={index} style={{minWidth:'20%'}}>
+                                                        <div className="tab1 text-center" key={index} style={{minWidth:'20%',filter:'blur(6px)'}}>
                                                             <img src={value.photoUrl || ''} alt="student" width={'85%'} />
                                                             <p>{value.name || ''}</p>
                                                         </div>
                                                     )
                                                 })
                                                 : ''}
-                                        {/* <div className="tab1 text-center">
+                                       {/* <div className="tab1 text-center">
                                             <img src={student} alt="student" width={'85%'} />
                                             <p>Karan Vir</p>
                                         </div>
-                                        <div className="tab1 text-center">
+                                         <div className="tab1 text-center">
                                             <img src={student} alt="student" width={'85%'} />
                                             <p>Karan Vir</p>
                                         </div>
