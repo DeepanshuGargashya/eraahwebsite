@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-// import BannerImage from '../Assets/blog.png'
+import BannerImage from '../Assets/blog.png'
 import ArrowRight from '../Assets/arrowRight.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 // import BannerImage from '../Assets/blogg.jpg'
-import BannerImage from '../Assets/blogg.png'
+// import BannerImage from '../Assets/blogg.png'
 import bannercaraousel1 from '../Assets/bannercaraousel1.jpeg'
 import bannercaraousel2 from '../Assets/bannercaraousel2.jpeg'
 import bannercaraousel3 from '../Assets/bannercaraousel3.jpeg'
@@ -38,9 +38,9 @@ function BlogBanner() {
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div> */}
-                    {/* <img src={BannerImage} class=" px-0" alt="" /> */}
-                    <div className="banner-content" style={{position:'unset',backgroundColor:'purple',padding:'70px 0px'}}>
-                    {/* <div className="banner-content"> */}
+                    <img src={BannerImage} class=" px-0" alt="" />
+                    {/* <div className="banner-content" style={{position:'unset',backgroundColor:'purple',padding:'70px 0px'}}> */}
+                    <div className="banner-content">
                         <h1 className='mb-0 text-center'>Positive change starts <br /> with <span>your action</span></h1>
                         <p className='text-center mt-1'>Join us in making a difference that truly matters</p>
 

@@ -29,6 +29,7 @@ function Works() {
     const [teacherData, setTeacherData] = useState([]);
     const [teacherId, setTeacherId] = useState('');
     const [loader, setLoader] = useState(false);
+    const [LoginModal,setLoginModal] =useState(false);
 
 
     useEffect(() => {
@@ -51,6 +52,10 @@ function Works() {
             })
         }
     }, [])
+    const handlePopupbtn=()=>{
+        setLoginModal(false);
+        navigate('/logIn')
+    }
     return (
         <>
             {/* <HowItWorks/>
@@ -148,7 +153,7 @@ function Works() {
                                     </div>
 
                                     <div className="imgss-banner mt-4">
-                                        <img src={teacherData?.photoUrl || ''} alt="Teacher Image" width={'100%'} />
+                                        <img src={teacherData?.photoUrl || ''} alt="Teacher Image" width={'100%'} style={{height:'200px',objectFit:'contain'}}/>
                                     </div>
                                     <div className="numberofStudents d-flex justify-content-between mt-4">
                                         <h5>Students</h5>
@@ -162,18 +167,18 @@ function Works() {
                                                     //     return
                                                     // }
                                                     return (
-                                                        <div className="tab1 text-center" key={index} style={{minWidth:'20%',filter:'blur(6px)'}}>
-                                                            <img src={value.photoUrl || ''} alt="student" width={'85%'} />
+                                                        <div className="tab1 text-center" key={index} style={{minWidth:'20%',filter:'blur(6px)',cursor:'pointer'}} onClick={()=>setLoginModal(true)}>
+                                                            <img src={value.photoUrl || ''} alt="student" width={'85%'} style={{height:'160px',objectFit:'cover'}} />
                                                             <p>{value.name || ''}</p>
                                                         </div>
                                                     )
                                                 })
                                                 : ''}
-                                       {/* <div className="tab1 text-center">
+                                         {/* <div className="tab1 text-center" >
                                             <img src={student} alt="student" width={'85%'} />
                                             <p>Karan Vir</p>
                                         </div>
-                                         <div className="tab1 text-center">
+                                       <div className="tab1 text-center">
                                             <img src={student} alt="student" width={'85%'} />
                                             <p>Karan Vir</p>
                                         </div>
@@ -290,6 +295,25 @@ function Works() {
 
                 <Map heading={'Support a Teacher near you!'} text={'Explore a map with requests from teachers across the country'} />
             </div>
+
+            {
+                LoginModal ?
+                <>
+                <div className="modal-background-blur"></div>
+                <div class="modal" tabindex="-1" style={{display:'block',top:'20%'}}>
+                <div class="modal-dialog w-25">
+                  <div class="modal-content">
+                    <div class="modal-header" style={{borderBottom:'none'}}>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={()=>setLoginModal(false)}></button>
+                    </div>
+                    <div class="modal-body text-center">
+                      <p style={{fontSize:'20px'}}>To Know More About us </p>
+                      <button type="button" class="btn" style={{backgroundColor:'#6100ff',color:'#fff',padding:'5px 35px'}} onClick={()=>handlePopupbtn()}>Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </> :'' }
 
         </>
     )

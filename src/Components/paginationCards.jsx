@@ -191,7 +191,7 @@ function Blogcard({ index, img, count, name, subject, handlebookmark, checkedboo
     <>
       <div class="col-lg-4 col-sm-6 mt-4 ">
         <div className="card-width">
-          <img src={img} alt="" />
+          <img src={img} alt="" style={{height:'300px',objectFit:'cover'}}/>
           {/* <div className="Totalchildrentaught">
             <h5>Total children taught</h5>
             <h5 className="count">{count}</h5>
