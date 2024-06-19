@@ -12,9 +12,11 @@ import donatesectionimg from '../Assets/donate-section-img.png';
 import student from '../Assets/student.png';
 import instaicon from '../Assets/instaicon.png';
 import facebookicon2 from '../Assets/facebookicon2.png';
+import twitterLogo10 from '../Assets/twitterLogo10.png';
 import whatsappicon2 from '../Assets/whatsappicon2.png';
 import linkdinicon from '../Assets/linkdinicon.png';
 import donateicon from '../Assets/donateicon.png';
+import youtubeicon3 from '../Assets/youtubeicon3.png';
 import pdficon from '../Assets/pdficon.png';
 import works1 from '../Assets/works1.png';
 import works2 from '../Assets/works2.png';
@@ -139,7 +141,7 @@ function Works() {
                                                             if (index !== teacherData.teachSclass.length - 1) {
                                                                 return `${value.sclassName}, `;
                                                             } else {
-                                                                return value.sclassName;
+                                                                return `${value.sclassName} Class`;
                                                             }
                                                         })}
                                                     </h5>
@@ -153,7 +155,8 @@ function Works() {
                                     </div>
 
                                     <div className="imgss-banner mt-4">
-                                        <img src={teacherData?.photoUrl || ''} alt="Teacher Image" width={'100%'} style={{height:'200px',objectFit:'contain'}}/>
+                                        {/* <img src={teacherData?.photoUrl || donatesectionimg} alt="Teacher Image" width={'100%'} style={{height:'315px',objectFit:'contain'}}/> */}
+                                        <img src={teacherData?.photoUrl || ''} alt="Teacher Image" width={'100%'} style={{height:'230px',objectFit:'contain'}}/>
                                     </div>
                                     <div className="numberofStudents d-flex justify-content-between mt-4">
                                         <h5>Students</h5>
@@ -168,7 +171,7 @@ function Works() {
                                                     // }
                                                     return (
                                                         <div className="tab1 text-center" key={index} style={{minWidth:'20%',filter:'blur(6px)',cursor:'pointer'}} onClick={()=>setLoginModal(true)}>
-                                                            <img src={value.photoUrl || ''} alt="student" width={'85%'} style={{height:'160px',objectFit:'cover'}} />
+                                                            <img src={value.photoUrl || ''} alt="student" width={'85%'} style={{height:'100px',objectFit:'cover'}} />
                                                             <p>{value.name || ''}</p>
                                                         </div>
                                                     )
@@ -207,26 +210,26 @@ function Works() {
                                         <h6>A chain reaction of support starts with 1 share</h6>
 
                                         <div className="linkstabs d-flex mt-4">
-                                            <div className="tabs2 text-center">
+                                            <a className="tabs2 text-center" href='https://www.instagram.com/eraah_org?igsh=M3k3NzMyMmt6b20=' target="_blank" style={{textDecoration:'none'}}>
                                                 <img src={instaicon} alt="instagram" width={'50%'} />
                                                 <h6 className='h6Name mt-2'>Instagram</h6>
-                                            </div>
-                                            <div className="tabs2 text-center">
-                                                <img src={facebookicon2} alt="Facebook" width={'50%'} />
-                                                <h6 className='h6Name mt-2'>Facebook</h6>
-                                            </div>
-                                            <div className="tabs2 text-center">
-                                                <img src={whatsappicon2} alt="Whatsapp" width={'50%'} />
-                                                <h6 className='h6Name mt-2'>Whatsapp</h6>
-                                            </div>
-                                            <div className="tabs2 text-center">
+                                            </a>
+                                            <a className="tabs2 text-center" href='https://www.linkedin.com/company/eraah/' target="_blank" style={{textDecoration:'none'}}>
                                                 <img src={linkdinicon} alt="Linkedin" width={'50%'} />
                                                 <h6 className='h6Name mt-2'>Linkedin</h6>
-                                            </div>
+                                            </a>
+                                            <a className="tabs2 text-center" href='https://x.com/eraah_org?s=21&t=78VDFA9U7opi0vJ_Df7MnQ' target="_blank" style={{textDecoration:'none'}}>
+                                                <img src={twitterLogo10} alt="Twitter" width={'50%'} />
+                                                <h6 className='h6Name mt-2'>Twitter</h6>
+                                            </a>
+                                            <a className="tabs2 text-center" href='https://youtube.com/@eraah_org?si=TDb_DjRKMnPBsWrf' target="_blank" style={{textDecoration:'none'}}>
+                                                <img src={youtubeicon3} alt="youtube" width={'50%'} />
+                                                <h6 className='h6Name mt-2'>Youtube</h6>
+                                            </a>
                                         </div>
                                     </div>
                                     <div className="bottom-box text-center">
-                                        <h4>Support Laxmi</h4>
+                                        <h4>Support {teacherData?.name || ''}</h4>
                                         <div className="boxbottom">
                                             <div className="btnbox" onClick={() => (donateActive === true ? navigate('/payment') : '')}>
                                                 <div className={`arrowbox ${donateActive === true ? 'activehover' : ''}`} onMouseEnter={() => setdonateActive(true)} onMouseLeave={() => setdonateActive(false)}>
